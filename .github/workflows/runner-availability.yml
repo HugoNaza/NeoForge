@@ -1,0 +1,12 @@
+name: Runner availability probe
+on:
+  push:
+    branches: [motor-dynamics-ci-check]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "GitHub hosted runner available"; java -version
